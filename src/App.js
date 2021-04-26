@@ -1,12 +1,13 @@
 // https://www.youtube.com/watch?v=naIWIC9L3W0
 // Redux-1
+// 22:00
 
 import './App.css';
 
 function App() {
   return (
       <div className="App">
-        ////
+        {/*//*/}
       </div>
   );
 }
