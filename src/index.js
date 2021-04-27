@@ -8,22 +8,60 @@ import reportWebVitals from './reportWebVitals';
 // Redux-1
 // 22:00
 import {createStore} from "redux";
+import {Provider} from "react-redux";
+import {store} from "./redux";
 
-const reducer = (state, action) => {
-    switch (action.type) {
-        case value:
+// const initialState = {
+//     counter: 0
+// }
+//
+// // const reducer = (state = {counter: 0}, action) => {
+// const reducer = (state = initialState, action) => {
+//     switch (action.type) {
+//         case 'INC_CUSTOM': {
+//             return {
+//                 ...state, counter: state.counter + action.payload
+//             }
+//         }
+//         case 'INC': {
+//             return {
+//                 ...state, counter: state.counter + 1
+//             }
+//         }
+//         case 'DEC': {
+//             return {
+//                 ...state, counter: state.counter - 1
+//             }
+//         }
+//         case 'RESET': {
+//             return {
+//                 ...state, counter: 0
+//             }
+//         }
+//         default:
+//             console.log('action', action.type, 'does not exist');
+//             return state;
+//     }
+// }
 
-            break;
+// const store = createStore(reducer);
+// console.log('store', store);
 
-        default:
-            break;
-    }
-}
-const store = createStore(reducer);
+// store.subscribe(() => {
+//     console.log('tutt', store.getState())
+// })
+//
+// store.dispatch({type: 'INC'})
+// store.dispatch({type: 'INC'})
+// store.dispatch({type: 'INC'})
+// store.dispatch({type: 'INC'})
+
 
 ReactDOM.render(
     <React.StrictMode>
-        <App/>
+        <Provider store={store}>
+            <App/>
+        </Provider>
     </React.StrictMode>,
     document.getElementById('root')
 );
